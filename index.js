@@ -14,16 +14,23 @@ const app = express()
 
 // }
 
-
 app.get("/", (req, res) => {
+
+    res.status(200).json({
+        name: "fbyd fhgifu fhyriedkd",
+        status_code: 200
+    })
+})
+
+app.get("/home", (req, res) => {
 
     res.status(200).json({
         slack_name: req.query.slack_name,
         current_day: (new Date).getDay(),
         utc_time: "",
         track: req.query.track,
-        github_file_url: "",
-        github_repo_url: "",
+        github_file_url: "https://github.com/Amidsts/HNG10_task1/blob/main/index.js",
+        github_repo_url: "https://github.com/Amidsts/HNG10_task1",
         status_code: 200
     })
 })
