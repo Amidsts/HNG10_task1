@@ -4,7 +4,9 @@ const app = express()
 
 const xTime = new Date();
 xTime.setMilliseconds(0)
-console.log((xTime.toString()));
+console.log(new Date().toISOString().slice(0, 19) + 'Z');
+
+
 
 app.get("/api", (req, res) => {
 
@@ -21,7 +23,7 @@ app.get("/api", (req, res) => {
     let showTime
 
     if ( Math.abs(timeDiff) <=  120000 ) {
-        showTime = currentTime
+        showTime = currentTime.toISOString().slice(0, 19) + 'Z'
     }
 
 
